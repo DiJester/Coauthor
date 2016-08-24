@@ -11,7 +11,7 @@ exports.getUserByMail = function(email,callback){
 	User.findOne({'email':email},callback);
 };
 
-exports.newAndSace = function (name,loginname,pass,email,profile,callback){
+exports.newAndSave = function (name,loginname,pass,email,profile,callback){
 	var user = new User();
 	user.name = name;
 	user.loginname = loginname;

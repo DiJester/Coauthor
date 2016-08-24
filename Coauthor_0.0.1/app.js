@@ -11,6 +11,14 @@ var app = express();
 //赋端口值
 global.port=3000;
 
+//连接数据库
+var mongoose = require('mongoose');    //引用mongoose模块
+var db = mongoose.createConnection('localhost','test'); //创建一个数据库连接
+db.on('error',console.error.bind(console,'连接错误:'));
+db.once('open',function(){
+  //一次打开记录
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
