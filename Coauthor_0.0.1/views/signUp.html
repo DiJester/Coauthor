@@ -10,6 +10,18 @@
 #nav1{
  padding-top:10px;
 }
+#registForm{
+	padding-top:60px;
+}
+#table {
+	width:800px;
+	height:500px;
+}
+
+#subm {
+	margin-left:250px;
+	width:90px;
+}
 </style>
 </head>
 
@@ -47,54 +59,98 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    
-    
-    
-   <!--main sign up-->
-   
-   <div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="jumbotron">
-				<h1>
-					Hello, world!
-				</h1>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					 <a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div>
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-				</div>
-			</div>
-			<div class="row clearfix">
-				<div class="col-md-8 column">
-				</div>
-				<div class="col-md-4 column">
-				</div>
-			</div>
-			<div class="row clearfix">
-				<div class="col-md-8 column">
-				</div>
-				<div class="col-md-4 column">
-				</div>
-			</div>
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-    
-    
-    
-    
-    <footer class="footer" id='footer'>
-      <div class="container">
+<form name="registForm" id="registForm" method="post" action="#">
+  <table name="table" align="center" id="table">
+  <tr>
+    <td colspan="3"><strong>How would you describe your level of programming experience?</strong></td>
+  </tr> 
+  <tr>
+    <td class="side">
+      <input type="radio" name="radioOption" id="radio1OPtion1" 
+         value="option1" checked>Very experienced
+    </td>
+    <td> 
+      <input type="radio" name="radioOption" id="radio1Option2" 
+         value="option2" >Somewhat experienced
+    </td>
+    <td>
+       <input type="radio" name="radioOption" id="radio1Option3" 
+         value="option3" >Totally new to programming
+    </td>
+  </tr>
+  <tr>
+    <td colsppan="3"><strong>What do you plan to use Coauthor for?</strong></td>
+  </tr>
+  <tr>
+    <td>
+        <input type="checkbox" name="chkbxOptn" id="chkbxOptn1" 
+         value="option1" checked>Project Management
+    </td>
+    <td>  
+        <input type="checkbox" name="chkbxOptn" id="chbxOptn2" 
+         value="option2" >School projects
+    </td>
+    <td>
+        <input type="checkbox" name="chkbxOptn" id="chbxOptn3" 
+         value="option3" >Design
+    </td>
+   </tr>
+   <tr>  
+      <td>
+         <input type="checkbox" name="chkbxOptn" id="chbxOptn4" 
+         value="option4" >Research
+      </td>
+      <td>
+         <input type="checkbox" name="chkbxOptn" id="chbxOptn5" 
+         value="option5" >Development
+      </td>
+      <td>
+         <input type="checkbox" name="chkbxOptn" id="chbxOptn6" 
+         value="option6" >Other(pelease specify)
+       </td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>What is closest to how you would describle yourslef?</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <input type="radio" name="radioOption" id="radio2OPtion1" 
+         value="option1" checked>I'm a student
+      </td>
+      <td>
+        <input type="radio" name="radioOption" id="radio2Option2" 
+         value="option2" >I'm a hobbyist
+      </td>
+      <td>
+        <input type="radio" name="radioOption" id="radio2Option3" 
+         value="option3" >I'm a professional
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="radio" name="radioOption" id="radio2Option4" 
+         value="option4" >Other(please specify)
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>What are you interested in?</strong></td>
+    </tr>
+    <tr>
+      <td colspan=3><textarea cols="120" rows="3" name="commet" id="textArea"></textarea></td>
+    </tr>  
+</table> 
+</form>
+
+
+
+
+  <button type="submit" class="btn btn-success" id="subm">submit</button>
+  <button type="button" class="btn" id="skip">skip this step</button>
+
+
+
+<footer class="footer" id='footer'>
+  <div class="container">
         <p class="text-muted">Place sticky footer content here.</p>
       </div>
     </footer>
