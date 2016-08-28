@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+#inputText {
+	  margin-top:7px;
+	  width:300px; 
+  }
+#screen {
+
+	height:250px;
+	}
+#infoLeft {
+	margin-left:100px;
+	width:667px;
+	height:250px;
+	}
+#text {
+	width:350px;
+	float:right;
+	}
+#info {
+	font-size:14px;
+	}
+#nav{
+	padding-top:7px;
+	padding-left:100px;
+	  }
+#navbar{
+	color:black;
+	margin-top:50px;
+	  }	
+#horizon {
+	width:100%;
+	margin-top:50px;
+	}
+#infoRight
+{   margin-right:60px;
+	width:400px;
+    float:right;
+	}
+#footer {
+	position:absolute;
+	width:100%;
+	 height: 100px;
+  background-color: #f5f5f5;
+  margin-top:50px;
+}
+#footNav {
+	padding-top:5px;
+	}
+#divider1 {
+	padding-top:25px;
+	font-size:5px;
+    text-align:center;
+	}
+#copyRight {
+	text-align:center;
+	}

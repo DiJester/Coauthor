@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>homePage</title>
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../public/stylesheets/homePage.css" rel="stylesheet" type="text/css" />
+<style>
+.myBadge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #777;
+  border-radius: 10px;
+}
+
+.myList-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.myNav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.myNav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.myNav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 0px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.myNav-tabs > li > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.myNav-tabs > li.active > a,
+.myNav-tabs > li.active > a:hover,
+.myNav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  border-bottom: 3px solid #74C600;
+  outline:none;
+}
+
+
+</style>
+<script>
+window.onload=function(){
+	init();
+	
+	var tab=document.getElementById('rightTab');
+	var list=document.getElementById('rightList');
+	for(var i=0;i<tab.children.length;i++){
+		
+			tab.children[i].onclick=function(){
+				    
+				for(var j=0;j<tab.children.length;j++){
+					tab.children[j].index=j;
+					tab.children[j].className="";
+					list.children[j].className="tab-pane";
+					}
+				
+				this.className="active";
+				list.children[this.index].className="tab-pane active";
+				
+				
+				
+				};
+		
+		
+		}
+	
+	
+	$('#cancel').click(function(){
+		document.getElementById('studyPart').style.display="none";
+		
+		});
+	
+	
+	};
+
+function init(){
+	//界面与服务器交互，进行车实话，获取信息
+	/*
+			<li class="myList-group-item">
+			  <p class="text-muted" style="font-size:80%"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> ~~更新时间</p>
+			  <p><a herf="">~~Peter</a> pushed to <a herf="">~~master</a> at <a herf="">~~Coauthor</a></p>
+			  <p>~~头像 <a herf=""~~>版本号</a>~~ summary</p>
+			</li> 
+			var time="2016/8/26";
+	var name="Frank";
+	var role="hero";
+	var project="Coauthor";
+	var pic="no picture now"
+	var version="1.00";
+	var summary="no thing";
+	var infNum=3;//项目信息条数
+	
+	for(var i=0;i<infNum;i++){
+	
+	var list=document.getElementById('infList');
+	var ele=document.createElement('li');
+	ele.className="myList-group-item";
+	
+	*/
+	//查看是否存在所需更新信息，所需更新信息：更新时间，姓名，角色，项目名，头像，版本号，概述,包含在for循环中
+	
+	
+	//list.appendChild(ele);	
+	var responseNum=6;
+	document.getElementById('myBadge').innerHTML=responseNum;
+	}
+	
+
+	
+</script>
+</style>
+</head>
+<body>
+
+	
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#" id="nav"><span><IMG src="../public/img/logo2.png" width=35 height=35></span></a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav" id="navbar-nav">
+            <li><input type="text" class="form-control" placeholder="Search coauthor" id="inputText"></li>
+            <li><a href="#"><strong>Pull requests</strong></a></li>
+            <li><a href="#"><strong>Issues</strong></a></li>
+            <li><a href="#"><strong>Gist</strong></a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="dropdown" id="dropdown1">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" >
+                    <li><a href="#">New repository</a></li>
+                    <li><a href="#">Import repository</a></li>
+                    <li><a href="#">New organization</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="dropdown2">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Your profiles</a></li>
+                    <li><a href="#">Your stars</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+            </li>
+        </ul>
+    
+    </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-md-7">
+    <div class="container" > 
+      <div class="jumbotron" id="infoLeft"> 
+        <div class="newsfeed-placeholder">
+          <img alt="Newsfeed-mini" class="newsfeed-placeholder-graphic" height="138" src="https://assets-cdn.github.com/images/modules/dashboard/newsfeed-mini.png" width="188">
+          <div id="text">  
+            <h4><strong>Discover interesting projects and people to populate your personal news feed.</strong></h4>
+            <p id="info">Your news feed helps you keep up with recent activity on repositories you watch and people you follow</p>
+            <a href="/explore" class="btn btn-outline"><h4><strong>Explore Coauthor</strong></h4></a>
+          </div>  
+        </div>
+      </div>
+    </div>  
+  </div>
+  <div class="col-md-5" id="infoRight">
+      <ul class="list-group" id="infList"> 
+            <li class="myList-group-item">
+			  <p class="text-muted" style="font-size:80%"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 更新时间</p>
+			  <p><a herf="">Peter</a> pushed to <a herf="">master</a> at <a herf="">Coauthor</a></p>
+			  <p>头像 <a herf="">版本号</a> summary</p>
+			</li> 
+          	
+      </ul>
+      <ul class="list-group"> 
+            <li class="list-group-item" style="background-color:#F0E9F5">
+			  <span style="font-weight:bold">Your repositories</span>
+              
+              <!--仓库内容-->
+              
+			  <span class="myBadge" id="myBadge"></span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button type="button" class="btn btn-success">New repository</button>
+			</li> 
+            <li class="list-group-item" style="background-color:#F6F3F8">
+			  <input type="text" class="form-control" placeholder="Find a repository..." aria-describedby="basic-addon1">
+			  
+			  <div>
+                <!-- Nav tabs -->
+                <ul class="nav myNav-tabs" role="tablist" id="rightTab">
+                  <li role="presentation" class="active"><a href="#allRepositories" aria-controls="allRepositories" role="tab" data-toggle="tab">All</a></li>
+                  <li role="presentation"><a href="#publicRepositories" aria-controls="publicRepositories" role="tab" data-toggle="tab">Public</a></li>
+                  <li role="presentation"><a href="#privateRepositories" aria-controls="privateRepositories" role="tab" data-toggle="tab">Private</a></li>
+                  <li role="presentation"><a href="#sourceRepositories" aria-controls="sourceRepositories" role="tab" data-toggle="tab">Source</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" id="rightList">
+                  <div role="tabpanel" class="tab-pane active" id="allRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+					  <li class="list-group-item">项目3</li>
+			        </ul>
+				  </div>
+                  
+				  <div role="tabpanel" class="tab-pane" id="publicRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+			        </ul>
+				  </div>
+                  
+				  <div role="tabpanel" class="tab-pane" id="privateRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+			        </ul>
+				  </div>
+                  
+                  <div role="tabpanel" class="tab-pane" id="sourceRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+			        </ul>
+				  </div>
+                </div>
+		      </div>
+			  
+			</li>			
+          </ul>
+   </div>
+</div> 
+  
+  
+   
+<HR id="horizon"></HR>
+<footer class="footer" id='footer'>
+      <div class="container" id="divider1">
+      <a href="https://#" data-ga-click="Footer, go to terms, text:terms">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to security, text:security">Security</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to status, text:status">Status</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to help, text:help">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a class="brand" href="#" id="footNav"><IMG src="../public/img/logo3.png" width=30 height=30></a>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to contact, text:contact">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to api, text:api">API</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to trianing, text:trianing">Training</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to shop, text:shop">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to blog, text:blog">Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to about, text:about">About</a>
+      </div>
+      <div>
+        <h6 id="copyRight">Copyright © Coauthor Inc. All Rights Reserved</h6>
+      </div>
+</footer>
+  <script src="../public/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+  <script src="../public/jquery-3.0.0/jquery-3.0.0.min.js"></script>  
+</body>
+</html>

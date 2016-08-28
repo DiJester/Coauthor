@@ -1,0 +1,217 @@
+<!--Edit by LiuChang,Liudi,Yuhaixu/Coauthor 2016/8/28 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Personal Page</title>
+
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../public/stylesheets/个人主页.css" rel="stylesheet" type="text/css" />
+<script src="../public/js/个人主页.js">
+window.onload=ldRtLst();
+//页面加载时调用ldRtLst()加载右边list-group中用户各种类型仓库(repositories)的信息；
+
+</script>
+</head>
+
+<body>
+
+
+
+<!-- navigation bar-->	
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+    <!--"nav" is the navigation bar logo-->
+        <a class="navbar-brand" href="#" id="nav"><span><IMG src="../../../../../public/img/logo2.png" width=35 height=35></span></a>
+    </div>
+  <div>
+        <ul class="nav navbar-nav" id="navbar-nav">
+            <!--"inputText" is the textbox of navigation bar,click "Pull requests" to search the content in the textbox-->
+            <li><input type="text" class="form-control" placeholder="Search coauthor" id="inputText"></li>
+            <li><a href="#"><strong>Pull requests</strong></a></li>
+            <li><a href="#"><strong>Issues</strong></a></li>
+            <li><a href="#"><strong>Gist</strong></a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <!--"dropdown1" is a dropdown menu(下拉菜单) in navigation bar-->
+            <li class="dropdown" id="dropdown1">
+              <!-- the icon of "dropdown1"-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <b class="caret"></b>
+                </a>
+                <!-- the options in "dropdown1"-->
+                <ul class="dropdown-menu" >
+                    <li><a href="#">New repository</a></li>
+                    <li><a href="#">Import repository</a></li>
+                    <li><a href="#">New organization</a></li>
+                </ul>
+            </li>
+            <!--"dropdown2" is a dropdown menu(下拉菜单) in navigation bar-->
+            <li class="dropdown" id="dropdown2">
+              <!-- the icon of "dropdown2"-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <b class="caret"></b>
+                </a>
+                <!-- the options in "dropdown1"-->
+                <ul class="dropdown-menu">
+                    <li><a href="#">Your profiles</a></li>
+                    <li><a href="#">Your stars</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+            </li>
+        </ul>
+    
+    </div>
+</nav>
+	
+	<!--main part-->
+    <br /><br /><br />
+    <!--This part is used to display messages to new users,clilck "learn more" to get more messages,click " skip" to close this part-->
+    <div class="container" id="studyPart">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+					Hello, world!
+				</h1>
+				<p>
+					New comer?Don't worry, let we show you how to use Coauthor!
+                    if you have learned how to use Coauthor,skip it.
+				</p>
+				<p>
+					 <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                     <button type="button" class="btn btn-default btn-large" id="cancel"  >skip</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+    
+    
+    
+   
+	<div class="container">
+    
+      <div class="row">
+        <div class="col-md-8">
+          <!--This part is used to display the project update information including  user's name,project name,versions,update time and update description--> 
+          <ul class="list-group" id="infList"> 
+            <li class="myList-group-item">
+			  <p class="text-muted" style="font-size:80%"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 更新时间</p>
+			  <p><a herf="">Peter</a> pushed to <a herf="">master</a> at <a herf="">Coauthor</a></p>
+			  <p>头像 <a herf="">版本号</a> summary</p>
+			</li> 
+          	
+          </ul>
+        </div>
+        
+        
+        <div class="col-md-4">
+           <!--This part is used to display the user's repository message,including building a new repository,searching an exsiting repository--> 
+          <ul class="list-group"> 
+            <li class="list-group-item" style="background-color:#F0E9F5">
+			  <span style="font-weight:bold">Your repositories</span>
+              
+              <!--仓库内容-->
+              
+			  <span class="myBadge" id="myBadge"></span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button type="button" class="btn btn-success">New repository</button>
+			</li> 
+            <li class="list-group-item" style="background-color:#F6F3F8">
+			  <input type="text" class="form-control" placeholder="Find a repository..." aria-describedby="basic-addon1">
+			  
+			  <div>
+                <!-- Nav tabs -->
+                  <!--Display repository type:all,public,private,source-->
+                <ul class="nav myNav-tabs" role="tablist" id="rightTab">
+                  <li role="presentation" class="active"><a href="#allRepositories" aria-controls="allRepositories" role="tab" data-toggle="tab">All</a></li>
+                  <li role="presentation"><a href="#publicRepositories" aria-controls="publicRepositories" role="tab" data-toggle="tab">Public</a></li>
+                  <li role="presentation"><a href="#privateRepositories" aria-controls="privateRepositories" role="tab" data-toggle="tab">Private</a></li>
+                  <li role="presentation"><a href="#sourceRepositories" aria-controls="sourceRepositories" role="tab" data-toggle="tab">Source</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                  <!--Show the repository name in the list-->
+                <div class="tab-content" id="rightList">
+                  <div role="tabpanel" class="tab-pane active" id="allRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+					  <li class="list-group-item">项目3</li>
+			        </ul>
+				  </div>
+                  
+				  <div role="tabpanel" class="tab-pane" id="publicRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+			        </ul>
+				  </div>
+                  
+				  <div role="tabpanel" class="tab-pane" id="privateRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+			        </ul>
+				  </div>
+                  
+                  <div role="tabpanel" class="tab-pane" id="sourceRepositories">
+				    <ul class="list-group"> 
+                      <li class="list-group-item">项目1</li>
+					  <li class="list-group-item">项目2</li>
+			        </ul>
+				  </div>
+                </div>
+		      </div>
+			  
+			</li>			
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!--Separator-->  
+<HR id="horizon"></HR>
+
+<!--footor-->
+<footer class="footer" id='footer'>
+    <div class="container" id="divider1">
+    <!--links-->  
+      <a href="https://#" data-ga-click="Footer, go to terms, text:terms">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to security, text:security">Security</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to status, text:status">Status</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to help, text:help">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <!--logo-->
+         <a class="brand" href="#" id="footNav"><IMG src="../../../../../public/img/logo3.png" width=30 height=30></a>
+       <!--links-->
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to contact, text:contact">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to api, text:api">API</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to trianing, text:trianing">Training</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to shop, text:shop">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to blog, text:blog">Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to about, text:about">About</a>
+    </div>
+      <!--Copyright statement-->
+      <div>
+        <h6 id="copyRight">Copyright © Coauthor Inc. All Rights Reserved</h6>
+      </div>
+</footer>
+
+
+<script src="../../../../../Desktop/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../../../../../Desktop/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+</body>
+</html>
