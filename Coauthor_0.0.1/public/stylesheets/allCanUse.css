@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+/*Edit by LiuChang,LiuDi,YuHaixu/Coauthor  2016/9/6 */
+/*custom float right style*/
+.right {
+	float:right;
+	margin-left:10px;
+}
+/*custom float left style*/
+.left {
+	margin-right:5px;
+	float:left;
+}
+/*custom float right style*/
+.float-right {
+	float:right;
+	margin-left:10px;
+}
+/*custom float left style*/
+.float-left {
+	margin-right:10px;
+	float:left;
+}
+
+.head {
+	height:40px;
+	width:20px;
+	padding-top:30px;
+}
+#name {
+	height:45px;
+}
+/*custom footer style*/
+#footer {
+	position:fixed;
+	bottom:0px;
+	width:100%;
+	height:50px;
+    background-color: #f5f5f5;
+    text-align:center;
+}
+
+.col-md-12 column {
+	padding-top:-10px;
+	}
+/*custom style of the logo in the footer*/
+#logo {
+	padding-top:10px;
+}
+.judge .btn{
+margin-top:-20px;
+	}
+/*custom form-inline style*/
+.form-inline {
+	margin-top:2px;
+	}
+.form-inline span {
+	margin-top:-25px;
+	}
+.form-inline h4 {
+	margin-top:5px;
+	}
+/*customm style of the font in the navbar*/
+.navbar-header a {
+	font-weight:600;
+	}
+.navLeft{
+	text-decoration:none;
+	color:#000;
+	margin-right:20px;
+	float:left;
+	margin-top:15px;
+}
+/*custom style of the brand of the navbar*/
+#brand {
+	margin-top:-7px;
+	float:left;
+	}
+/*custom style of the input box of the navbar*/
+#search {
+	width:300px;
+	float:left;
+	margin-top:8px;
+	margin-right:20px;
+}
+.navRight {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+/*custom style of the right dropdown button of the navbar*/
+#navChange{
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+/*custom style of the left dropdown button of the navbar*/
+#navInf {
+	float:right;
+	margin-right:-10px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+	}
+.navRight span {
+	width:30px;
+	height:30px;
+}
+/*custom font style*/
+.heavy {
+	font-weight:550;
+	}
+/*the style of the background under navbar*/
+#back {
+	width:100%;
+	height:105px;
+	background:#fafafa;
+	}
+/*the style of the main part of the page*/
+#infoPart {
+	margin-top:-40px;
+	width:1000px;
+}
+/* the color of the dropdown button*/
+.dropdown-toggle {
+	color:#000;
+	}
+/*the width of the navbar*/
+#nav {
+	width:1000px;
+	}
+/*the width of the text editor*/
+#editor {
+	width:1000px;
+	}
+.row clearfix {
+	margin-left:35px;
+	
+	}
+/*the width of the dropdown menu*/
+.dropdown-menu {
+	width:300px;
+}
+/*the width of the dropdown menu' options*/
+.dropdown li
+{
+	width:90%;
+	margin-left:15px;
+	}
+/*the style of the divider in the dropdown menu*/
+.dropdown-menu #divider
+{
+	margin-top:-15px;
+	}
+#selection2 li {
+	width:70px;
+}
+/*the style of the paragraph of class tab-pane*/
+.tab-pane p{
+	margin-top:10px;
+	}
+/*custom style of font color*/
+.gray{
+	color:#999;
+	}
+/*custom style of font color*/
+.gray1 {
+	color:#666;
+	}
+/*custom style of font size*/
+.littlefont
+{
+	font-size:12px;
+	}
+/*custom style of font size*/	
+.middlefont
+{
+	font-size:24px;
+}
+/*custom style of font size*/
+.h5font
+{
+	font-size:16px;
+	}
+/*custom style of font color*/	
+.black {
+	color:#000;
+	}

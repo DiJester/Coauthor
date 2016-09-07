@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>forum</title>
+<link href="./bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+<style>
+.catalog {
+	margin-top:-40px;
+	border:#CCC 0.5px solid;
+}
+#footer {
+	position:fixed;
+	bottom:0px;
+	width:100%;
+
+	 height: 40px;
+  background-color: #f5f5f5;
+  text-align:center;
+}
+
+#logo {
+	padding-top:-5px;
+}
+
+.navLeft{
+	text-decoration:none;
+	color:#000;
+	margin-right:20px;
+	float:left;
+	margin-top:15px;
+}
+#search {
+	width:300px;
+	float:left;
+	margin-top:10px;
+	margin-right:20px;
+}
+.dropdown-menu li {
+	padding-left:0px
+}
+.navRight {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+#navChange,#navInf {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+	
+}
+.navRight span {
+	width:30px;
+	height:30px;
+}
+
+#brand {
+	float:left;
+	margin-top:-6px;
+}
+#main {
+	margin-top:70px;
+	width:75%
+}
+#tabs {
+	margin-top:20px;
+}
+.right {
+
+	float:right;
+	margin-left:10px;
+}
+
+.left {
+	float:left;
+	margin-right:10px;
+}
+
+.short2 {
+	height:30px;
+	padding-top:5px;
+}
+.summ{
+
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#head {
+	border:1px solid #CCC;
+	height:50px;
+	width:100%;
+	}
+#links
+{
+	margin-top:15px;
+	
+	}	
+.options a {
+	
+    margin-top:50px;
+	margin-right:60px;
+	margin-left:60px;
+	color:#666;
+}
+.funBtn {
+	height:60px;
+	margin-top:5px;
+	margin-bottom:20px;
+}
+.t_a {
+	margin: 10px;
+}
+.t_a a {
+	margin-right:10px;
+	}
+#readMe {
+	margin-top:20px;
+}
+.large {
+	height:20px;
+	width:20px;
+}
+
+.large1 {
+	width:300px;
+	margin-left:20px;
+}
+#selection2 li {
+	width:70px;
+}
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.head {
+	height:40px;
+	width:20px;
+	padding-top:30px;
+}
+
+.judge {
+	padding-top:0px;
+}
+.branchInput {
+	width:270px;
+	margin:5px 10px;
+}
+
+#footerLogo {
+	padding-top:8px;
+	}
+.breadcrumb {
+ margin-top:-20px;
+	}
+.dropdown-toggle {
+	color:#333;
+	}
+#nav {
+	width:75%;
+	}
+.nav a
+{
+	font-color:#000;
+}
+.btn
+{
+	font-size:10px;
+	
+	}	
+.funBtn
+{
+	margin-top:-5px;
+	}
+#userLogo {
+	margin-top:-20px;
+}
+#selection {
+	margin-top:-30px;
+	}
+#code {
+	margin-left:-15px;
+	width:103%;
+	}
+#wiki {
+	width:100%;
+	}
+#pulse {
+	margin-left:-15px;
+	width:103%;
+	}
+#pane2 {
+	margin-top:15px;
+	}
+#actionBtn 
+{
+	margin-left:0px;
+	}
+#codeTable {
+	margin-top:-20px;
+	}
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container" id="nav" >
+        <div class="navbar-header" id="navbar">
+
+
+		 <a  id="brand" class="navbar-brand" href="#"><span><IMG src="resource/logo3.png" width=35 height=35></span></a>
+          <input type="text" placeholder="Search" class="form-control" id="search">
+          <a class="navLeft" href="#"><strong>Pull request</strong></a>
+          <a class="navLeft" href="#"><strong>Issues</strong></a>
+          <a class="navLeft" href="#"><strong>Gist</strong></a>
+            </div>
+             <!--修改个人信息等-->
+           <div class="btn-group" id="navInf">
+  		<a  href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		 <span class="glyphicon glyphicon-cog" aria-hidden="true" ></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+
+
+
+            <!--添加仓库等操作-->
+            <div class="btn-group " id="navChange">
+  		<a href="#"  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+
+        
+  
+
+                    <!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+<footer class="footer" id="footer" >
+      <div class="container" id="footerLogo">
+         <a class="brand" href="#"><IMG src="./resource/logo3.png" width=30 height=30></a>
+      </div>
+    </footer>
+     <script src="./jquery-3.0.0/jquery-3.0.0.min.js"></script>
+    <script src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

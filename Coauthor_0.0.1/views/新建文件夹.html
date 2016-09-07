@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>repositories page</title>
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../public/stylesheets/allCanUse.css" rel="stylesheet" type="text/css" />
+<script src="./Chart.bundle.js"></script>       <!-- 柱状图所需js -->
+<style>
+#footer {
+	width:100%;
+	position:relative;
+	bottom:0px;
+	height: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#leftul li{
+    float:left;list-style:none;width:5%;
+}
+
+#rightul li{
+    float:right;list-style:none;width:5%;
+}
+
+#logo {
+	padding-top:-5px;
+}
+
+.navLeft{
+	text-decoration:none;
+	color:#000;
+	margin-right:20px;
+	float:left;
+	margin-top:15px;
+}
+#search {
+	width:300px;
+	float:left;
+	margin-top:10px;
+	margin-right:20px;
+}
+
+.navRight {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+#navChange,#navInf {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+.navRight span {
+	width:30px;
+	height:30px;
+}
+	
+#brand {
+	float:left;
+}
+#main {
+	margin-top:100px;
+	width:1100px;
+}
+#tabs {
+	margin-top:20px;
+}
+.right {
+	padding-top:10px;
+	float:right;
+	margin-left:10px;
+}
+.left {
+	float:left;
+	margin-right:10px;
+}
+
+.short {
+	height:30px;
+}
+.short1 {
+	height:30px;
+	width:5px;
+}
+.short2 {
+	height:30px;
+	padding-top:5px;
+}
+
+.myForm-control{width:25%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+
+.myForm-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.myForm-control:-ms-input-placeholder {
+  color: #999;
+}
+.myForm-control::-webkit-input-placeholder {
+  color: #999;
+}
+
+.slash {
+	font-size:21px;
+	color:#666;
+	margin-right:4px;
+	margin-left:4px;
+}
+#content {
+	margin-top:15px;
+    width:1200px;
+	
+	margin-left:35px;
+	}
+<!-- 柱状图 -->
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.list-group-item h4,.radio,.btn-success{
+	margin-left:20px;
+	}
+.list-group-item textarea {
+	margin-left:20px;
+	height:200px;
+	background-color:#fafafa;
+	}
+.list-group-item input {
+	margin-left:20px;
+	background-color:#fafafa;
+	}
+#head {
+	margin-left:0px;
+	}
+#pic {
+	margin-top:15px;
+	}
+</style>
+
+
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container" id="nav" >
+        <div class="navbar-header" id="navbar">
+          
+        
+		 <a  id="brand" class="navbar-brand" href="#"><span><IMG src="./logo3.png" width=35 height=35></span></a>
+          <input type="text" placeholder="Search" class="form-control" id="search">
+          <a class="navLeft" href="#">Pull request</a>
+          <a class="navLeft" href="#">Issues</a>
+          <a class="navLeft" href="#">Gist</a>          
+          
+
+	
+         
+          
+          
+                    <!--/.nav-collapse -->
+      </div>
+	  
+		  <!-- 登陆后右上角部分 -->
+		  <ul class="nav navbar-nav navbar-right" style="display:block">
+			<li><a href="#">Sign Out</a></li>
+          </ul>
+		  <!-- 登陆后右上角部分结束 -->
+		  
+		  <!-- 未登录右上角部分 -->
+		  <ul class="nav navbar-nav navbar-right" style="display:none">
+            <li><a href="#">Sign In</a></li>
+			<li><a href="#">Sign Up</a></li>
+          </ul>
+		  <!-- 未登录右上角部分结束 --> 
+	  
+    </nav>
+
+
+		<!--主要内容-->
+        <div class="container" id="main" style="margin-top:50px;">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+        
+
+						<form>
+							<div class="container"  id="content">
+                              <div class="form-inline" id="head">
+                                <span><a href="#" style="font-size:150%">evenstar</a></span>
+                                <span class="slash">/</span>
+								<span><a href="#" style="font-size:150%"><strong>Coauthor</strong></a></span>
+								<span class="slash">/</span>
+								<input type="text" class="myForm-control" placeholder="Input your folder name" aria-describedby="basic-addon1">
+							  </div>
+								<div class="row" id="pic">
+									<div class="col-md-2">
+										<img src="./pic.png"  height="48" width="48">
+									</div>
+   								</div>
+								<div class="row">
+									<div class="col-md-10">
+										<ul class="list-group" style="margin-left:65px;margin-top:-50px;">
+											<li class="list-group-item">
+												<h4> Commit new folder</h4>	
+                                             										
+												<input type="text" class="form-control" placeholder="Summary" aria-describedby="basic-addon1" style="width:95%"><BR>
+												<textarea rows="4" placeholder="Add an optional extended description" class="form-control" style="width:95%"></textarea><BR>
+												<div class="radio">
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+														<svg aria-hidden="true" class="octicon octicon-git-commit text-gray" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"></path></svg>
+														Commit directly to the master branch
+													</label>
+													<BR>
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+														 <svg aria-hidden="true" class="octicon octicon-git-pull-request text-gray" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+														Create a new branch for this commit and start a pull request
+													</label>
+													<BR>
+												</div>
+												<button type="button" class="btn btn-success">Commit new folder</button>
+												<button type="button" class="btn btn-default">Cancel</button>
+											</li>	
+										</ul>
+									</div>									
+								</div>
+							</div>
+						</form>
+						<BR><BR><BR>
+					<!-- 新建文件夹部分结束 -->
+
+						
+					
+						
+					
+					
+					
+
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer" id='footer'>
+      <div class="container" id="logo">
+        <span ><img src="resource/logo3.png" width=35 height=35></span>
+      </div>
+    </footer>
+
+
+     <script src="../public/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+    <script src="../public/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

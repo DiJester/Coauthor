@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+#footer {
+	position:fixed;
+	bottom:0px;
+	width:100%;
+
+	 height: 40px;
+  background-color: #f5f5f5;
+  text-align:center;
+}
+
+#logo {
+	padding-top:-5px;
+}
+
+.navLeft{
+	text-decoration:none;
+	color:#000;
+	margin-right:20px;
+	float:left;
+	margin-top:15px;
+}
+#search {
+	width:300px;
+	float:left;
+	margin-top:7px;
+	margin-right:20px;
+}
+.dropdown-menu li {
+	padding-left:0px
+}
+.navRight {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+#navChange,#navInf {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+	
+}
+
+#brand {
+	float:left;
+	margin-top:-8px;
+}
+
+#tabs {
+	margin-top:20px;
+}
+
+
+#head {
+	border:1px solid #CCC;
+	height:50px;
+	width:100%;
+	}
+#footerLogo {
+	padding-top:8px;
+	}
+
+.dropdown-toggle {
+	color:#333;
+	}
+#nav {
+	width:80%;
+	}
+.nav a
+{
+	font-color:#000;
+}
+.btn
+{
+	font-size:10px;
+	
+	}	
+
+#userLogo {
+	margin-top:-20px;
+}
+#repositoryContent {
+	margin-top:-20px;
+}
+
+.float-right {
+	float:right;
+	margin-left:20px;
+	}
+.float-left {
+	float:left;
+	margin-right:20px;
+	}
+.gray{
+	color:#999;
+	}
+.gray1 {
+	color:#666;
+	}
+.black {
+	color:#000;
+	}
+#photo {
+	width:50px;
+	height:50px;
+	}
+#discussion-timeline {
+	width:770px;
+	margin-left:-40px;
+	}
+.relative {
+	width:100%;
+	}
+.absolute {
+	
+	}	
+#sidebar
+{
+	width:200px;
+
+	}
+#barList
+{
+	width:200px;
+	}
+.panel
+{
+	width:85%;
+	}
+.littlefont
+{
+	font-size:12px;
+	}
+#action {
+	height:600px;
+	width:860px;
+	margin-left:-2px;
+	
+	}
+#editor {
+	float:left;
+	width:89%;
+	
+		
+	}
+
+#commitorPhoto {
+	float:left; 
+	margin-right:5px; 
+	margin-left:-2px;
+	}
+#show-issue {
+	margin-left:-25px;	
+}
+#topic {
+	width:88%;
+	}
+#discuss-bucket {
+	width:88%;
+	}
+#discussion-list {
+	width:860px;
+	}
+#comment {
+	float:right;
+	margin-right:48px;
+	margin-left:20px;
+	}
+#horizon { 
+	margin-left:25px;
+	width:102%;
+	margin-top:-30px;
+	}
+div.nav-tabs.affix{ 
+        top:22px;
+		
+		}

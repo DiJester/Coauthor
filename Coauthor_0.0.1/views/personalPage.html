@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>personal page</title>
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<style>
+.dropdown-toggle {
+	color:#333;
+	}
+#nav {
+	width:84%;
+	}
+.nav a
+{
+	font-color:#000;
+}
+#logo {
+     padding-top:15px;
+}
+
+.navLeft{
+	text-decoration:none;
+	color:#000;
+	margin-right:20px;
+	float:left;
+	margin-top:15px;
+}
+#search {
+	width:300px;
+	float:left;
+	margin-top:7px;
+	margin-right:20px;
+}
+.dropdown-menu li {
+	padding-left:0px
+}
+.navRight {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:30px;
+	height:30px;
+}
+#navChange,#navInf {
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+	width:40px;
+	height:30px;
+	
+}
+
+#brand {
+	float:left;
+	margin-top:-8px;
+	margin-left:20px;
+}
+.float-right {
+	float:right;
+	margin-left:20px;
+	}
+.float-right1 {
+	float:right;
+	margin-left:10px;
+	}	
+.float-left {
+	float:left;
+	margin-right:20px;
+	}
+.gray{
+	color:#999;
+	}
+.gray1 {
+	color:#666;
+	}
+.littlefont
+{
+	font-size:12px;
+	}
+.middlefont
+{
+	font-size:24px;
+	}
+.black {
+	color:#000;
+	}
+#pageContent {
+	margin-top:-70px;
+
+	}
+.heightRelative {
+
+	}
+#leftContent {
+	width:250px;
+	float:left;
+	margin-left:79px;
+	}
+#leftContent div {
+	width:230px;
+	}
+#leftHorizon {
+	margin-top:90px;
+	}
+#rightContent {
+	width:65.5%;
+	float:left;
+	}
+.popular {
+	font-size:13px;
+	}
+#selection li a {
+	color:#666;
+	}
+#summary {
+	margin-left:15px;
+	}
+#firstPanel {
+	margin-top:20px;
+	}
+#contribution {
+	font-size:16px;
+}
+#contributionContent {
+	margin-left:-40px;
+	}
+#commitDiv {
+	margin-top:-30px;
+	background:#FFF;
+	width:15%;
+	text-align:center;
+	margin-left:350px;
+	font-size:15px;
+
+	}
+#issueDiv {
+	margin-top:-30px;
+	background:#FFF;
+	width:25%;
+	text-align:center;
+	margin-left:300px;
+	font-size:15px;
+	}
+#footDivider{
+ width:76.5%;
+	}
+.shadow {
+	border-bottom:1px solid #CCC;
+	}
+.light {
+	font-weight:100;
+	font-size:18px;
+	}
+.heavy {
+	font-weight:400;
+	}
+.rightSide {
+	float:right;
+	margin-top:-40px;
+}
+.rightSide a {
+	color:#999;
+	}
+#pActive {
+	
+}
+
+#pActive li {
+	padding-top:17px;
+
+
+}
+.resSize {
+	font-size:20px;
+	font-weight:600;
+}
+#text {
+
+ margin-top:-20px;
+
+	}
+#text input{
+	margin-top:15px;
+	margin-right:5px;
+	width:240px;
+	}
+#searchBtn {
+	margin-top:15px;
+	}
+#new
+ { 
+ margin-top:15px;
+
+ }
+#options
+ {
+	 padding-top:20px;
+ }
+#listGroup
+{
+	margin-top:15px;
+	}
+ #info {
+	 float:right;
+	 }
+.small {
+	color:#999;
+}
+.list-group-item
+{
+	border-left:hidden;
+	border-right:hidden;
+	}
+#first {
+	border-top:hidden;
+	}
+#footer {
+	
+	bottom:0px;
+	width:100%;
+	
+	 height: 60px;
+  background-color: #f5f5f5;
+  text-align:center;
+}
+.line {
+	width:100%;
+	height:1px;
+	background:#0CF;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+.personalPage {
+	color:#09F;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+
+#main {
+	margin-top:90px;
+	
+}
+
+#personalData a strong{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+	margin-left:15px;
+}
+#personalData a {
+	float:left;
+	margin-right:25px;
+}
+#personalData a span {
+	color: #767676;
+}
+
+#inf li {
+	background:none;
+}
+#inf li span{
+	margin-right:10px;
+}
+#headPic {
+	width:230px;
+	height:230px;
+	text-align:center;
+}
+.personalName {
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	color: #666;
+	width:330px;
+	
+}
+
+#repos {
+	margin-top:10px;
+	background:#0CF;
+}
+span {
+	margin-right:5px;
+}
+</style>
+<script src="../public/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+<script src="../public/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+<script>
+
+window.onlaod=function(){
+	
+	var sel=document.getElementById('selection');
+	var cont=document.getElementById('content');
+	var num=sel.children.length;
+	
+	for(var i=0;i<num;i++){
+			
+			sel.children[i].onclick=function(){
+					for(var j=0;j<num;j++){
+						sel.children[i].index=i;
+						sel.children[j].className="";
+						cont.children[j].className="tab-pane";
+						}
+						
+					this.className="active";
+					cont.children[this.index].className="tab-pane active";
+				
+				};
+		}
+	
+	
+		
+	
+	};
+	//动态添加commits值，info为需添加链接的文字，url为所需连接url
+	function addCommits(info,url){
+		var span1=document.createElement('span');
+		var aa=document.createElement('a');
+		span1.className="glyphicon glyphicon-fire"; 
+		
+		aa.href=url;
+		aa.innerHTML=info;
+		
+		var li1=document.createElement('li');
+		li1.className="list-group-item";
+		li1.appendChild(span1);
+		li1.appendChild(aa);
+		
+		document.getElementById('commits').appendChild(li1);
+	}
+</script>
+</head>
+
+<body>
+				
+                <!--导航栏-->
+<nav class="navbar navbar-default ">
+      <div class="container " id="nav" >
+        <div class="navbar-header" id="navbar">
+
+
+		 <a  id="brand" class="navbar-brand" href="#"><span><IMG src="../public/stylesheets/resource/logo3.png" width=35 height=35></span></a>
+          <input type="text" placeholder="Search" class="form-control" id="search">
+          <a class="navLeft" href="#"><strong>Pull request</strong></a>
+          <a class="navLeft" href="#"><strong>Issues</strong></a>
+          <a class="navLeft" href="#"><strong>Gist</strong></a>
+            </div>
+             <!--修改个人信息等-->
+           <div class="btn-group" id="navInf">
+  		<a  href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		 <span class="glyphicon glyphicon-cog" aria-hidden="true" ></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+
+
+
+            <!--添加仓库等操作-->
+            <div class="btn-group " id="navChange">
+  		<a href="#"  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+      <!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+  		
+        <!--页面主主体-->
+<div class="container" id="main">
+	<div class="row clearfix heightRealtive" id="pageContent">
+		<div class="col-md-12 column heightRelative">
+			<div class="row clearfix heightRelative">
+            
+            	<!--个人信息栏-页面左-->
+				<div class="container" id="leftContent">
+					<img id="headPic" class="img-rounded" alt="230x230" src="resource/19322545.jpg" ><br> 
+                    <div>
+                      <p class="gray1 middlefont"><strong>name</strong></p>
+                      <p class="gray1  light">nick name</p>
+                    </div>
+                   	<div><hr></div>
+                    <div>
+                      <p><svg aria-hidden="true" class="octicon octicon-organization" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4"></path></svg>&nbsp;&nbsp;&nbsp;&nbsp;</span>Organization</p>
+                      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true">&nbsp;</span>Address</p>
+                      <p><span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span><a href="#">email</a></p> 
+                      <p><span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>Joined on 24 Aug 2016</p>
+                    </div>
+                    <div><hr></div>
+				    <div id="personalData">
+                      <a href="#" >
+                	  <strong>0</strong><br>
+                      <span class="littlefont">Follower</span>
+          
+                      </a>
+                      <a href="#" >
+                	  <strong>0</strong><br>
+                      <span class="littlefont">Starred</span>
+          
+                      </a>
+                      <a href="#" >
+                	  <strong>0</strong><br>
+                      <span class="littlefont">Following</span>
+          
+                      </a>
+                
+                   </div>
+                   <div id="leftHorizon"><hr></div>
+                 
+                    
+				</div>
+                
+                
+                
+                <!--个人主页内容-页面右-->
+				<div class="container" id="rightContent">
+					
+					<div class="tabbable" id="tabs-94664">
+						<ul id="selection" class="nav nav-tabs">
+							<li class="active">
+								 <a href="#panel-1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Overview</a>
+							</li>
+							<li>
+								 <a href="#panel-2" data-toggle="tab"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>Repositories</a>
+							</li>
+                            <li>
+								 <a href="#panel-3" data-toggle="tab"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span>Public activities</a>
+							</li>
+						</ul>
+                        
+						<div  id="content" class="tab-content">
+                        
+                        
+                        
+                        <!--panel 1-->
+							<div class="tab-pane active" id="panel-1">
+                            
+                            
+                            <div class="panel panel-default " id="firstPanel">
+                              <div class="panel-heading gray">
+                                
+                                <span class="gray1 popular" ><strong>Popular repositories</strong></span>
+                               
+                              </div>
+                              <div class="panel-body shadow" >
+                              <span class="glyphicon glyphicon-book" aria-hidden="true"></span><a href="#" class="popular"><strong>Coauthor</strong></a> <br>
+                                         <small class="gray" id="summary">summary</small>
+                              </div>
+                             
+                               <div class="panel-body shadow">
+                              <span class="glyphicon glyphicon-book" aria-hidden="true"></span><a href="#" class="popular"><strong>Coauthor</strong></a> <br>
+                                         <small class="gray" id="summary">summary</small>
+                              
+                              </div>
+                            </div>
+						
+                                <p id="contribution">Contribution activity</p>
+                                
+                                               <hr>
+                                <!--后台添加commit信息，及其连接-->
+                                <p class="gray" id="commitDiv"><svg aria-hidden="true" class="octicon octicon-git-commit" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"></path></svg>&nbsp;&nbsp;2 commit</p>
+                                <div id="contributionContent">
+                                  <ul><a href="#" ><strong>Pushed 1 commit to evenstars/test </strong></a><span class="gray"> Sep 1</span></ul>
+                                  <ul><a href="#" ><strong>Pushed 1 commit to evenstars/test </strong></a><span class="gray"> Sep 1</span></ul>
+                                </div>
+                                <hr>
+                                <p class="gray" id="issueDiv"><span class="glyphicon glyphicon-exclamation-sign">&nbsp;</span>1 issue reported</p>
+                                <div id="contributionContent">
+                                 <ul><span class="gray littlefont">#1</span><a href="#" ></span><strong>This is a issue</strong></a><span class="gray littlefont"> Sep 1 <br> Vampire-VX/Coauthor</span></ul>
+                                 
+                                </div>
+                              </div>
+                               
+                               <!--界面2-->
+                                <div class="tab-pane " id="panel-2">
+								  
+    			
+  				<!-- <div class="container float-right form-inline" id="repository">-->
+        
+                 <a href="/new" class="btn btn-success float-right1" id="new">
+    				 <span class="glyphicon glyphicon-book">&nbsp;</span>
+    				  <strong>New</strong>
+   				  </a>
+                  <div id="options">
+                   <a href="#" class="repo_filter js-repo-filter-tab float-right1" data-filter=".mirror">Mirrors</a>
+                   <a href="#" class="repo_filter js-repo-filter-tab float-right1" data-filter=".forks">Forks</a>
+                   <a href="#" class="repo_filter js-repo-filter-tab float-right1" data-filter=".source">Source</a>
+                   <a href="#" class="repo_filter js-repo-filter-tab float-right1" data-filter=".private">Private</a>
+                   <a href="#" class="repo_filter js-repo-filter-tab float-right1" data-filter=".public">Public</a>
+ 			  	  <a href="#" class="repo_filter js-repo-filter-tab active float-right1" data-filter=".all">All</a>
+                 </div>
+                 
+   				<!-- </div>-->
+    
+  			<div class="form-inline " id="text">
+   			 <input type="text" class="form-control" placeholder="Find a repository..." id="inputText">
+    			<button type="button"  class="btn btn-default" id=searchBtn><strong>Search</strong></button>
+  			</div>
+          
+                <ul class="list-group" id="listGroup" >                
+                      <li class="list-group-item">
+                      	<p><a href="#" class="resSize">Coauthor
+                        </a></p>
+                        
+                        <div class="rightSide">
+                        	<a  href="#">
+        			<span aria-hidden="true" class="glyphicon glyphicon-star"></span>
+       				 <strong>0</strong>
+       					</a>
+       				<a  href="#">
+       			 	<span aria-hidden="true" class="glyphicon glyphicon-random"></span>
+       				<strong>0</strong>
+       				</a>  
+                        </div>
+                        
+                        	<p><small class="small">forked from</small><a href="#" >&nbsp;ZhuXS/Coauthor</a></p>
+                       		 <small class="small">Updated 4 days ago</small>
+                        	</li>  
+                            
+                         <li class="list-group-item">
+                      	<p><a href="#" class="resSize">Coauthor
+                        </a></p>
+                        
+                        <div class="rightSide">
+                        	<a  href="#">
+        			<span aria-hidden="true" class="glyphicon glyphicon-star"></span>
+       				 <strong>0</strong>
+       					</a>
+       				<a  href="#">
+       			 	<span aria-hidden="true" class="glyphicon glyphicon-random"></span>
+       				<strong>0</strong>
+       				</a>  
+                        </div>
+                        
+                        	<p><small class="small">forked from</small><a href="#" >&nbsp;ZhuXS/Coauthor</a></p>
+                       		 <small class="small">Updated 4 days ago</small>
+                        	</li>   
+                                    
+                  		</ul>
+                        
+                        
+                       
+                        
+                            </div>  
+                            
+                            
+                            
+                            <!--step3--> 
+                             <div class="tab-pane " id="panel-3">
+								<ul class="list-group " id="pActive">
+                            		<li class="list-group-item " id="first">
+                                		<svg aria-label="Create" class="octicon octicon-git-branch dashboard-event-icon" height="16" role="img" version="1.1" viewBox="0 0 10 16" width="10"><path d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>&nbsp;
+                                   	 <a href="#">evenstar</a> create a branch <a href="#">master</a> at <a href="#">Coauther</a><span class="gray"> 12 days ago</span>
+									</li> 
+                                    <li class="list-group-item ">
+                                		<svg aria-label="Create" class="octicon octicon-git-branch dashboard-event-icon" height="16" role="img" version="1.1" viewBox="0 0 10 16" width="10"><path d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>&nbsp;
+                                   	 <a href="#">evenstar</a> create a branch <a href="#">master</a> at <a href="#">Coauther</a><span class="gray"> 12 days ago</span>
+									</li>  
+                                    <li class="list-group-item">
+                                           <svg aria-label="Create" class="octicon octicon-repo dashboard-event-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>&nbsp;                                     <a href="#">DiJester</a> create a repository <a href="#">DiJester/HelloWorld</a><span class="gray"> 12 days ago</span>
+									</li>  
+                                    <li class="list-group-item">
+                                    <svg aria-label="Push" class="octicon octicon-git-commit dashboard-event-icon" height="32" role="img" version="1.1" viewBox="0 0 14 16" width="28"><path d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"></path></svg>&nbsp;
+                                    <span class="gray"> 12 days ago</span><br>
+                                    <strong><a href="#">DiJester</a> pushed to master at <a href="#">DiJester/HelloWorld</a></strong>
+                                    </li>
+                           		 </ul>   
+                               </div>
+                                
+              			 </div>
+               </div>
+               
+             </div>
+            
+           </div>
+         </div>
+         
+       </div>
+    
+     </div>
+             <hr id="footDivider">    
+            
+
+  			<!--页脚-->
+<footer class="footer" id='footer'>
+      <div class="container" id='logo'>
+        <span ><img src="resource/logo3.png" width=30 height=30></span>
+      </div>
+    </footer>
+</body>
+</html>

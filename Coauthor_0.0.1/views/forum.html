@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>forum</title>
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+<link href="../public/201603131609/dist/css/bootstrap-markdown-editor.css" rel="stylesheet" type="text/css" />
+<link href="../public/stylesheets/forum.css" rel="stylesheet" type="text/css" />
+<style>
+
+</style>
+     <script src="../public/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+    <script src="../public/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="../public/201603131609/js/ace.js"></script>
+    <script src="../public/201603131609/js/marked.min.js"></script>
+    <script src="../public/201603131609/dist/js/bootstrap-markdown-editor.js"></script>
+<script>
+ 
+window.onload=function(){
+	
+$('#myEditor').markdownEditor({
+	imageInsert: true,
+  imageUpload: true, // Activate the option
+  uploadPath: 'upload.php' ,
+  // Activate the preview:
+  preview: true,
+  // This callback is called when the user click on the preview button:
+  onPreview: function (content, callback) {
+ 
+    // Example of implementation with ajax:
+    $.ajax({
+      url: 'preview.php',
+      type: 'POST',
+      dataType: 'html',
+      data: {content: content},
+    })
+    .done(function(result) {
+      // Return the html:
+      callback(result);
+    });
+ 
+  }
+}); 
+}
+
+</script>
+</head>
+
+<body data-spy="scroll" data-target="#sidebar">
+<nav class="navbar navbar-default ">
+      <div class="container" id="nav" >
+        <div class="navbar-header" id="navbar">
+
+
+		 <a  id="brand" class="navbar-brand" href="#"><span><IMG src="../public/stylesheets/resource/logo3.png" width=35 height=35></span></a>
+          <input type="text" placeholder="Search" class="form-control" id="search">
+          <a class="navLeft" href="#"><strong>Pull request</strong></a>
+          <a class="navLeft" href="#"><strong>Issues</strong></a>
+          <a class="navLeft" href="#"><strong>Gist</strong></a>
+            </div>
+             <!--修改个人信息等-->
+           <div class="btn-group" id="navInf">
+  		<a  href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		 <span class="glyphicon glyphicon-cog" aria-hidden="true" ></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+
+
+
+            <!--添加仓库等操作-->
+            <div class="btn-group " id="navChange">
+  		<a href="#"  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="caret"></span>
+  		</a>
+  		<ul class="dropdown-menu dropdown-menu-right">
+    		<li><a href="#">Action</a></li>
+    		<li><a href="#">Another action</a></li>
+    		<li><a href="#">Something else here</a></li>
+  		  <li role="separator" class="divider"></li>
+  		  <li><a href="#">Separated link</a></li>
+	  </ul>
+		</div>
+      <!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+<div class="container" id="repositoryContent">
+  <style type="text/css" media="screen">
+  </style>
+ 
+    <div class="container" id="show-issue">
+      <div class="container" id="topic">
+         <div class="form_inline" id="firstRow">
+          <a href="/h5bp/Front-end-Developer-Interview-Questions/issues/new" class="btn btn-sm btn-success float-right">
+            New issue
+          </a>
+           <h2>
+           Sources to learn for interview questions
+           <span class="gray" id="number">#338</span>
+           </h2>
+         </div>
+         <div class="form_inline" id="secondRow">
+            <div class="float-left">
+              <span class="label label-success"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Open</span>
+            </div>
+            <div class="float-left">
+               <a class="black" href="#"><strong>DiJester</strong></a>
+               <span class="gray">&nbsp;opened this issue on 15 Dec 2015 · 12 comments</span>
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="container" id="discuss-bucket">
+      <HR>
+         <div class="container float-left" id="discussion-timeline">
+         
+           <div class="container relative" id="discussion-list">
+           
+             <div class="container relative">
+            
+               
+               <div class="contanier float-left" id="photo">
+               <img src="https://avatars0.githubusercontent.com/u/625918?v=3&amp;s=52" class="img-circle"> 
+               </div>
+               
+               <div class="panel panel-default float-left">
+                 <div class="panel-heading">
+                   <a  class="black" href="#">DiJester</a>
+                   &nbsp;commented on&nbsp;
+                   <a class="gray" href="#">15 Dec 2015</a>
+                 </div>
+                 <div class="panel-body">
+                 I tried to find javascript books which go beyond just basic DOM manipulation and help us to answer interview questions like "Explain event delegation" (and more). I could not find any so far. Most books don't cover js in enough detail. So, can we also have a list of books to read ?
+                 </div>
+               </div>
+               
+               
+               
+             </div>
+             
+             
+             <div class="container relative">
+             
+               
+               <div class="contanier float-left" id="photo">
+               <img src="https://avatars0.githubusercontent.com/u/21214080?v=3&amp;s=52" class="img-circle" > 
+               </div>
+               
+               <div class="panel panel-default float-left">
+                 <div class="panel-heading">
+                   <a  class="black" href="#">DiJester</a>
+                   &nbsp;commented on&nbsp;
+                   <a class="gray" href="#">15 Dec 2015</a>
+                 </div>
+                 <div class="panel-body">
+                 I tried to find javascript books which go beyond just basic DOM manipulation and help us to answer interview questions like "Explain event delegation" (and more). I could not find any so far. Most books don't cover js in enough detail. So, can we also have a list of books to read ?
+                 </div>
+               </div>
+               
+               
+             </div>
+             
+             
+             
+             <div class="container relative">
+               
+               <div class="contanier float-left" id="photo">
+               <img src="" class="img-circle" > 
+               </div>
+               
+               <div class="panel panel-default float-left">
+                 <div class="panel-heading">
+                   <a  class="black" href="#">DiJester</a>
+                   &nbsp;commented on&nbsp;
+                   <a class="gray" href="#">15 Dec 2015</a>
+                 </div>
+                 <div class="panel-body">
+                 I tried to find javascript books which go beyond just basic DOM manipulation and help us to answer interview questions like "Explain event delegation" (and more). I could not find any so far. Most books don't cover js in enough detail. So, can we also have a list of books to read ?
+                 </div>
+               </div>
+               
+             </div>
+             
+             
+                          <div class="container relative">
+               
+               
+               <div class="contanier float-left" id="photo">
+               <img src="" class="img-circle"> 
+               </div>
+               
+               <div class="panel panel-default float-left">
+                 <div class="panel-heading">
+                   <a  class="black" href="#">DiJester</a>
+                   &nbsp;commented on&nbsp;
+                   <a class="gray" href="#">15 Dec 2015</a>
+                 </div>
+                 <div class="panel-body">
+                 I tried to find javascript books which go beyond just basic DOM manipulation and help us to answer interview questions like "Explain event delegation" (and more). I could not find any so far. Most books don't cover js in enough detail. So, can we also have a list of books to read ?
+                 </div>
+               </div>
+               
+              
+             </div>
+             
+             
+           </div>
+           
+          <hr id="horizon"> 
+           
+       <div class="container relative" id="action">
+     
+         <div class="container relative" id="commit">
+          <div class="contanier" id="commitorPhoto">
+               <img src="https://avatars0.githubusercontent.com/u/21214080?v=3&amp;s=52" class="img-circle" > 
+          </div>
+           <div class="container" id="editor">
+             <div id="myEditor"># Test</div>
+           </div>
+      
+         
+       </div>
+       <div class="container relative">
+          <button type="submit" style="margin-top:5px;" class="btn btn-success float-right"  id="comment" tabindex="2" data-disable-with="" data-disable-invalid="">
+    Comment
+  </button>
+      </div>    
+      </div>     
+           
+           
+         </div>
+         
+         
+         
+         
+         
+         <!--sidebar-->
+    <div class="discussion-sidebar js-sticky float-right" id="sidebar">
+        <div  class="nav nav-tabs" id="barList" data-spy="affix" data-offset-top="150" >
+            <div id="partial-discussion-sidebar" >
+
+
+
+      
+              <a href="#nav" class="littlefont gray1">
+              <strong>Go to top</strong>
+              </a>
+
+
+ 
+
+              <hr>
+ 
+              <a href="#commit" class="littefont gray1">
+              <strong>Comment</strong>
+              </a>
+
+
+              <div class="littlefont gray">
+              Write down your ideas
+              </div>
+              <hr>
+            </div>
+
+            <div id="partial-users-participants" >
+              <div >
+
+                <p class="littlefont gray1">
+                <strong>12 participants</strong>
+                </p>
+                <div class="participation-avatars">
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="DiJester" href="/DiJester"><img alt="@DiJester" class="img-circle" height="26" src="https://avatars0.githubusercontent.com/u/21214080?v=3&amp;s=40" width="26"></a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="marcobiedermann" href="/marcobiedermann"><img alt="@marcobiedermann" class="img-circle" height="26" src="https://avatars3.githubusercontent.com/u/5244986?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="xthilakx" href="/xthilakx"><img alt="@xthilakx" class="img-circle" height="26" src="https://avatars1.githubusercontent.com/u/1798262?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="hongbinc" href="/hongbinc"><img alt="@hongbinc" class="img-circle" height="26" src="https://avatars0.githubusercontent.com/u/14242026?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="odv" href="/odv"><img alt="@odv" class="img-circle" height="26" src="https://avatars3.githubusercontent.com/u/5067625?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="brianmontanaweb" href="/brianmontanaweb"><img alt="@brianmontanaweb" class="img-circle" height="26" src="https://avatars3.githubusercontent.com/u/4666838?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="peterasplund" href="/peterasplund"><img alt="@peterasplund" class="img-circle" height="26" src="https://avatars1.githubusercontent.com/u/5419563?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="jkup" href="/jkup"><img alt="@jkup" class="img-circle" height="26" src="https://avatars2.githubusercontent.com/u/490294?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="yichenlivened" href="/yichenlivened"><img alt="@yichenlivened" class="img-circle" height="26" src="https://avatars2.githubusercontent.com/u/10985041?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="popc0rn" href="/popc0rn"><img alt="@popc0rn" class="img-circle" height="26" src="https://avatars3.githubusercontent.com/u/2341114?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="igregson" href="/igregson"><img alt="@igregson" class="img-circle" height="26" src="https://avatars0.githubusercontent.com/u/2054975?v=3&amp;s=52" width="26"> </a>
+                  <a class="participant-avatar tooltipped tooltipped-n" aria-label="silkster" href="/silkster"><img alt="@silkster" class="img-circle" height="26" src="https://avatars0.githubusercontent.com/u/625918?v=3&amp;s=52" width="26"> </a>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div>
+              <p class="littlefont gray1"><strong>Notifications</strong></p>
+              <div>
+                <button class="btn  btn-default btn-sm" type="submit" data-disable-with="">
+                  <span class="glyphicon glyphicon-volume-up"></span>
+                Subscribe
+                </button>
+                <p class="littlefont gray" style="margin-top:5px;">You’re not receiving notifications from this thread.              </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+       
+         
+       
+         
+         
+         
+   </div>
+
+ </div>
+</div>
+
+
+<footer class="footer" id="footer" >
+      <div class="container" id="footerLogo">
+         <a class="brand" href="#"><IMG src="../public/stylesheets/resource/logo3.png" width=30 height=30></a>
+      </div>
+    </footer>
+
+    
+</body>
+</html>

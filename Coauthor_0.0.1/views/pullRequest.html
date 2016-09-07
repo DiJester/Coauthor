@@ -1,0 +1,447 @@
+<!--Edit by LiuChang,Liudi,Yuhaixu/Coauthor 2016/8/30-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Project Page</title>
+<link href="../public/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../public/stylesheets/个人主页.css" rel="stylesheet" type="text/css" />
+<style>
+/*style of "new issue" button*/
+#requestBtn {
+	float:right;
+	margin-top:-35px;
+	}
+/*put "filter" dropdown menu,inputbox,buttongroup,"new issue" button in a line*/	
+#inline {
+	width:60%;
+	margin-left:80px;
+	}
+/*style of issue list*/
+#list {
+	margin-top:25px;
+		width:80%;
+	margin-left:150px;
+}
+/*style of dropdown menu in issue list*/
+.dropdown {
+	float:right;
+	margin-left:20px;
+	}
+.dropdown-menu {
+	width:300px;
+}
+.dropdown li
+{
+	width:90%;
+	margin-left:15px;
+	}
+.divider
+{
+	width:100%;
+	}
+/*style of the information under issue list*/
+#text {
+	margin-left:300px;	
+}
+/* style of the first dropdwon menu in the issue list */
+#group1 {
+	float:right;
+	}	
+/* style of the first dropdwon menu in the issue list */
+#group2 {
+	float:right;
+	display:none;
+	}
+/* style of the first checkbox in the issue list */
+#check1
+{
+	float:left;
+	
+	}	
+/* style of the first information in the issue list header*/
+#info1
+{
+	float:left;
+	}
+/* style of the first checkbox in the issue list header*/	
+#info2 {
+	float:left;
+	display:none;
+	}	
+</style>
+
+<script>
+<!--when click checkbox1,if checkbox1 is checked hide the first information,display the second information,hide the first dropdown menu group,display the second dropdown menu group, check chekbox2,else display the first information,hide the second information,display the first dropdown menu group,hide the second dropdown menu group, uncheck chekbox2.-->
+function fnCheck1()
+{
+	//document.getElementById('group1').checked
+	//$("#group1')
+	var checkbox1=document.getElementById('check1');
+	var checkbox2=document.getElementById('check2');
+	var info1=document.getElementById('info1');
+	var info2=document.getElementById('info2');
+	var group1=document.getElementById('group1');
+	var group2=document.getElementById('group2');
+	if(checkbox1.checked==true)
+	{
+		info1.style.display="none";
+		info2.style.display="block";
+		group1.style.display="none";
+		group2.style.display="block";
+		checkbox2.checked=true;
+		}
+	else
+	{
+		info1.style.display="block";
+		info2.style.display="none";
+		group1.style.display="block";
+		group2.style.display="none";
+	    checkbox2.checked=false;
+		}
+		
+}
+
+
+<!--when click checkbox2,if checkbox2 is checked hide the first information,display the second information,hide the first dropdown menu group,display the second dropdown menu group, check chekbox1,else display the first information,hide the second information,display the first dropdown menu group,hide the second dropdown menu group, uncheck chekbox1.-->
+function fnCheck2()
+{
+	//document.getElementById('group1').checked
+	//$("#group1')
+	var checkbox1=document.getElementById('check1');
+	var checkbox2=document.getElementById('check2');
+	var info1=document.getElementById('info1');
+	var info2=document.getElementById('info2');
+	var group1=document.getElementById('group1');
+	var group2=document.getElementById('group2');
+	if(checkbox2.checked==true)
+	{
+		info1.style.display="none";
+		info2.style.display="block";
+		group1.style.display="none";
+		group2.style.display="block";
+		checkbox1.checked=true;
+		}
+	else
+	{
+		info1.style.display="block";
+		info2.style.display="none";
+		group1.style.display="block";
+		group2.style.display="none";
+	    checkbox1.checked=false;
+		}
+		
+}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#" id="nav"><span><IMG src="../public/img/logo2.png" width=35 height=35></span></a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav" id="navbar-nav">
+            <li><input type="text" class="form-control" placeholder="Search coauthor" id="inputText"></li>
+            <li><a href="#"><strong>Pull requests</strong></a></li>
+            <li><a href="#"><strong>Issues</strong></a></li>
+            <li><a href="#"><strong>Gist</strong></a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="dropdown" id="dropdown1">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" >
+                    <li><a href="#">New repository</a></li>
+                    <li><a href="#">Import repository</a></li>
+                    <li><a href="#">New organization</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="dropdown2">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Your profiles</a></li>
+                    <li><a href="#">Your stars</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+            </li>
+        </ul>
+    
+    </div>
+</nav>
+
+
+
+
+<!--"filter" dropdown menu,inputbox,buttongroup,"new issue" button--> 
+<div class="container">
+
+  <div class="form-inline" id="inline">
+    <!--dropdown menu "Filters"-->
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <strong>Filters</strong><span class="caret"></span>
+      </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Open issues and pull requests</a></li>
+          <li><a href="#">Your issues</a></li>
+          <li><a href="#">Your pull requests</a></li>
+          <li><a href="#">Everything assigned to you</a></li>
+          <li><a href="#">Everything mentioning to you</a></li>
+          <li><span class="glyphicon glyphicon-new-window"></span><a href="#">View advanced search syntax</a></li>
+        </ul>
+    </div>
+    <!--inputbxo-->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+      <input type="text" class="form-control" placeholder="is:pr is:open">
+    </div>
+    <!--buttongroup-->
+      <div class="btn-group" role="group" aria-label="...">
+       <button type="button" class="btn btn-default"><strong>Labels</strong></button>
+       <button type="button" class="btn btn-default"><strong>Milestones</strong></button>
+      </div>
+    
+  </div>
+  <!--"New issue" button-->
+  <a href="/ZhuXS/Coauthor/issues/new" class="btn btn-success" role="button"  id="requestBtn">
+          <strong>New pull request</strong>
+        </a>
+</div>        
+
+
+<!--Issue list-->
+<div class="container" id="list">
+  <ul class="list-group">
+    <!--The header of the issuelist-->
+    <li class="list-group-item">
+      <div>
+      
+        <input type="checkbox" class="js-check-all" id="check1" onclick="fnCheck1()">
+        <!--The information on left-->
+        &nbsp;&nbsp;
+        <!--the first information-->
+        <span id="info1">
+          <a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          <strong>0 open</strong></a>
+          <a href="#"><span class="glyphicon glyphicon-ok"></span>
+          2 closed</a>
+        <!--the second information-->
+        </span>
+        <span id="info2">
+          0 selected
+        </span>
+        
+        
+        <!--the first dropdown menus group on right-->
+        <div id="group1">
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Sort
+                    <b class="caret"></b>
+                </a>
+           
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Sort by</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"">Newest</a></li>
+            <li><a href="#">Oldest</a></li>
+            <li><a href="#">Most commented</a></li>
+            <li><a href="#">Least commented</a></li>
+            <li><a href="#">Recently updated</a></li>
+            <li><a href="#">Least recently commented</a></li>
+            <li><a href="#">Most reactions</a></li>
+          </ul>
+        </div>
+        
+      
+       <div class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Assignee
+                    <b class="caret"></b>
+                </a>
+          
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Filter by who's assigned</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;DiJester</a></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;evenstars</a></li>
+          </ul>
+       </div>
+   
+     
+        <div class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Milestones
+                    <b class="caret"></b>
+                </a>
+            
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Filter by milestone</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#">Issues with no milestone</a></li>
+          </ul>
+        </div>
+        
+        
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Labels
+                    <b class="caret"></b>
+                </a>
+            
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Filter by label</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;bug</a></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;duplicate</a></li>
+          </ul>
+        </div>
+        
+        
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Author
+                    <b class="caret"></b>
+                </a>
+          
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Filter by author</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;DiJester</a></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;evenstars</a></li>
+          </ul>
+       </div>
+      </div>
+       
+       
+        <!--the second dropdown menus group on right-->
+        <div id="group2">   
+       <div class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Assign
+                    <b class="caret"></b>
+                </a>
+            
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Assign someone</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;DiJester</a></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;evenstars</a></li>
+          </ul>
+       </div>
+   
+     
+        <div class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Milestone
+                    <b class="caret"></b>
+                </a>
+            
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Set milestone</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li>no milestone</li>
+          </ul>
+        </div>
+        
+        
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Label
+                    <b class="caret"></b>
+                </a>
+          
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Apply labels</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;bug</a></li>
+            <li><a href="#"><IMG src="#" />&nbsp;&nbsp;&nbsp;&nbsp;duplicate</a></li>
+          </ul>
+        </div>
+        
+        
+        <div class="dropdown ">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Mark as
+                    <b class="caret"></b>
+                </a>
+           
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><strong>Actions</strong></li>
+            <li><hr></hr></li>
+            <li><input type="text" class="form-control"></li>
+            <li><a href="#">Open</a></li>
+            <li><a href="#">Closed</a></li>
+          </ul>
+       </div>
+      </div>
+        
+     </div>
+   </li>
+   <!--The content of the issue list-->
+   <li class="list-group-item">
+      <h3><strong>There aren’t any open pull requests.</strong><h3>
+   </li>
+  </ul>
+
+<!--The information under issue list-->
+<div id="text">
+    <span class="glyphicon glyphicon-pushpin"></span>
+    <strong>ProTip!</strong>
+    Exclude your own issues with <a href="/ZhuXS/Coauthor/issues?q=is%3Aissue+is%3Aopen+-author%3ADiJester">base:master</a>.
+  </div>
+  
+</div>
+
+<HR id="horizon"></HR>
+<footer class="footer" id='footer'>
+      <div class="container" id="divider1">
+      <a href="https://#" data-ga-click="Footer, go to terms, text:terms">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to security, text:security">Security</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to status, text:status">Status</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to help, text:help">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a class="brand" href="#" id="footNav"><IMG src="../public/img/logo3.png" width=30 height=30></a>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to contact, text:contact">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to api, text:api">API</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to trianing, text:trianing">Training</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to shop, text:shop">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to blog, text:blog">Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://#" data-ga-click="Footer, go to about, text:about">About</a>
+      </div>
+      <div>
+        <h6 id="copyRight">Copyright © Coauthor Inc. All Rights Reserved</h6>
+      </div>
+</footer>
+
+<script src="../../../../../Desktop/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+<script src="../../../../../Desktop/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
